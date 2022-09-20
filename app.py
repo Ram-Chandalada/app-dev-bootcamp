@@ -8,9 +8,13 @@ app.config.update(
 )
 
 @app.route('/',methods=['GET','POST'])
-def login():
+def dashboard():
     user={"name":"Ram"}
-    return render_template("index.html",user=user)
+    return render_template("dashboard.html",user=user)
+
+@app.route('/login',methods=['GET','POST'])
+def login():
+    return render_template("login.html")
 
  
 if __name__ == "__main__":
